@@ -3,6 +3,7 @@ import { Microscope, Activity, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UploadZone } from "@/components/UploadZone";
 import { ResultCard } from "@/components/ResultCard";
+import { ChatBot } from "@/components/ChatBot";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -200,6 +201,11 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Chatbot - hanya muncul jika ada hasil analisis */}
+      {result && (
+        <ChatBot analysisResult={result} confidence={confidence} />
+      )}
     </div>
   );
 };
